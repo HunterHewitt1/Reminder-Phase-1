@@ -3,17 +3,17 @@ const { Schema } = require('mongoose')
 const closingSchema = new Schema(
   {
     realtorName: { type: String, required: true },
-    clietName: { type: String, required: true },
+    clientName: { type: String, required: true },
     email: { type: String, required: true },
     propertyAddress: { type: String, required: true },
     MLS: { type: String, required: true },
     closeDate: { type: Date, required: true },
     exucutedContractDate: { type: Date, required: true },
     optionPeriod: { type: String, required: true },
-    miscFee: { type: String, required: true },
-    titlePolicyDelivery: { type: String, required: true },
-    thirdPartyFinacing: { type: String, required: true },
-    surveryDelivery: { type: Boolean, required: true },
+    miscFee: { type: String, required: false },
+    titlePolicyDelivery: { type: String, required: false },
+    thirdPartyFinacing: { type: String, required: false },
+    surveryDelivery: { type: Boolean, required: false },
     closing_id: { type: Schema.Types.ObjectId, ref: 'closing_id' }
   },
   { timestamps: true }
