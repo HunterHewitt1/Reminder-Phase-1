@@ -1,6 +1,8 @@
 const express = require('express')
 const PORT = process.env.port || 3001
 const db = require('./db')
+const { Closing } = require('./models')
+const { Realtor } = require('./models')
 
 const app = express()
 

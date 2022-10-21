@@ -19,4 +19,5 @@ const closingSchema = new Schema(
   { timestamps: true }
 )
 //add ID for realtorName to ref name in realtors.js
+//dropdown to display realtors(with id) to accosiate the closing with realtor(if statement)
 module.exports = closingSchema
