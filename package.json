@@ -1,0 +1,28 @@
+{
+  "name": "reminder-phase-1",
+  "version": "1.0.0",
+  "description": "### By: Hunter Hewitt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HunterHewitt1/Reminder-Phase-1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HunterHewitt1/Reminder-Phase-1/issues"
+  },
+  "homepage": "https://github.com/HunterHewitt1/Reminder-Phase-1#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
