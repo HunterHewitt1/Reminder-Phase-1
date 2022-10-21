@@ -17,11 +17,14 @@ app.get('/', (req, res) => {
 //Create Closing Route --> POST
 app.post('/closings', async (req, res) => {
   let createClosing = await Closing.create(req.body)
-  res.send(createClosing)
+  res.json(createClosing)
 })
 
 //display all closings --> GET
-
+app.get('/closings', async (req, res) => {
+  let allClosings = await Closing.find({})
+  res.json(allClosings)
+})
 //Realtor Routes
 
 app.listen(PORT, () => {
