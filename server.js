@@ -20,11 +20,24 @@ app.post('/closings', async (req, res) => {
   res.json(createClosing)
 })
 
-//display all closings --> GET
+//Read all closings --> GET
 app.get('/closings', async (req, res) => {
   let allClosings = await Closing.find({})
   res.json(allClosings)
 })
+
+//Update Closings --> PUT
+app.put('/closings', async (req, res) => {
+  let updateClosings = await Closing.findByIdAndUpdate(
+    req.params.id,
+    red.body,
+    {
+      new: true
+    }
+  )
+  res.json(updateClosings)
+})
+
 //Realtor Routes
 
 app.listen(PORT, () => {
