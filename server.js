@@ -13,7 +13,6 @@ app.get('/', (req, res) => {
 })
 
 //Closing Routes
-
 //Create Closing Route --> POST
 app.post('/closings', async (req, res) => {
   let createClosing = await Closing.create(req.body)
@@ -38,8 +37,26 @@ app.put('/closings', async (req, res) => {
   res.json(updateClosings)
 })
 
-//Realtor Routes
+//Delete Realtors
 
+//Realtor Routes
+//Create Realtor Route --> POST
+app.post('/realtors', async (req, res) => {
+  let exampleId = '6352fad4125786e90a11aa44'
+  const requestBody = { ...req.body, realtorId: exampleId }
+
+  let createRealtor = await Realtor.create(requestBody)
+  res.json(createRealtor)
+})
+
+//Read All Realtors --> GET
+app.get('./realtors', async (req, res) => {
+  const allRealtors = await Realtor.find({})
+  res.json(allRealtors)
+})
+//Update Realtors
+
+//Delete Realtors
 app.listen(PORT, () => {
   console.log(`Express server listening on port: ${PORT}`)
 })
