@@ -1,12 +1,14 @@
 const express = require('express')
+const cors = require('cors')
 const PORT = process.env.port || 3001
 const db = require('./db')
 const { Closing } = require('./models')
 const { Realtor } = require('./models')
 
 const app = express()
-
+//Middleware
 app.use(express.json())
+app.use(cors())
 
 app.get('/', (req, res) => {
   res.send({ msg: 'This route is being hit' })
@@ -40,7 +42,7 @@ app.put('/closings', async (req, res) => {
 //Delete Realtors
 
 //Realtor Routes
-//Create Realtor Route --> POST
+// Create Realtor Route --> POST
 app.post('/realtors', async (req, res) => {
   let exampleId = '6352fad4125786e90a11aa44'
   const requestBody = { ...req.body, realtorId: exampleId }
@@ -50,7 +52,7 @@ app.post('/realtors', async (req, res) => {
 })
 
 //Read All Realtors --> GET
-app.get('./realtors', async (req, res) => {
+app.get('/realtors', async (req, res) => {
   const allRealtors = await Realtor.find({})
   res.json(allRealtors)
 })

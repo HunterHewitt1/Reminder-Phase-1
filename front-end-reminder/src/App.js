@@ -3,13 +3,47 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 function App() {
+  const [realtors, updateRealtor] = useState([])
+  const [formState, setFormState] = useState({name: "", brokerName: "", email: "", phone: "" })
+
   useEffect(() => {
-    let response = axios.get('localhost:3001/realtors')
+    const apiCall = async () => {
+      let response = await axios.get('http://localhost:3001/realtors')
+      updateRealtor(response.data)
+    }
+
+    apiCall()
+
   }, [])
+
+  const handleChange = (event) => {
+    setFormState({...formState, [event.target.id]: event.target.value})
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    console.log(formState)
+    let newRealtor = await axios.post("http://localhost:3001/realtors", 
+    formState)
+    .then((response) => {
+      return response
+    })
+    .catch((error) => {
+      return error
+    });
+    updateRealtor([...realtors, newRealtor.data])
+    setFormState({name: "", brokerName: "", email: "", phone: "" })
+  }
 
   return (
     <div className="App">
       <h1>All Realtors Here.</h1>
+      {realtors.map((realtor) => (
+        <div key={realtor._id}>
+          <h2>{ realtor.name }</h2>
+        </div>
+      ))}
+      <h3>Add Another Realtor:</h3>
     </div>
   )
 }
