@@ -29,7 +29,7 @@ app.get('/closings', async (req, res) => {
 app.put('/closings', async (req, res) => {
   let updateClosings = await Closing.findByIdAndUpdate(
     req.params.id,
-    red.body,
+    req.body,
     {
       new: true
     }
@@ -55,8 +55,14 @@ app.get('./realtors', async (req, res) => {
   res.json(allRealtors)
 })
 //Update Realtors
-
+app.put('/realtors', async (req, res) => {
+  let updateRealtor = await Realtor.findByIdAndUpdate(req.params.id, req.body, {
+    new: true
+  })
+  res.json(updateRealtor)
+})
 //Delete Realtors
+
 app.listen(PORT, () => {
   console.log(`Express server listening on port: ${PORT}`)
 })
