@@ -14,7 +14,7 @@ const closingSchema = new Schema(
     titlePolicyDelivery: { type: String, required: false },
     thirdPartyFinacing: { type: String, required: false },
     surveryDelivery: { type: Boolean, required: false },
-    closing_id: { type: Schema.Types.ObjectId, ref: 'closing_id' }
+    realtor_id: { type: Schema.Types.ObjectId, ref: 'realtor_id' }
   },
   { timestamps: true }
 )

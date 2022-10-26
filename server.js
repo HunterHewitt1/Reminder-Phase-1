@@ -65,6 +65,14 @@ app.put('/realtors', async (req, res) => {
 })
 //Delete Realtors
 
+
+//Read all closings by realtors
+
+app.get("/realtor/:id", async (req, res) => {
+  const closingByRealtor = await Closing.find({realtor_id:req.params.id})
+  res.json(closingByRealtor)
+})
+
 app.listen(PORT, () => {
   console.log(`Express server listening on port: ${PORT}`)
 })
