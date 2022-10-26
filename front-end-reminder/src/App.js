@@ -44,6 +44,17 @@ function App() {
         </div>
       ))}
       <h3>Add Another Realtor:</h3>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor='name'>Name:</label>
+        <input id='name' value={formState.name} onChange={handleChange}/>
+        <label htmlFor='brokerName'>Broker Name:</label>
+        <input id='brokerName' value={formState.brokerName} onChange={handleChange}/>
+        <label htmlFor='email'>Email:</label>
+        <input id='email' value={formState.email} onChange={handleChange}/>
+        <label htmlFor='phone'>Phone:</label>
+        <input id='phone' value={formState.phone} onChange={handleChange}/>
+        <button type='submit'>Add Realtor</button>
+      </form>
     </div>
   )
 }
