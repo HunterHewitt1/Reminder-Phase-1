@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 function Home() {
-  const [realtors, updateRealtor] = useState([])
+  const [realtors, newRealtor] = useState([])
   const [formState, setFormState] = useState({
     name: '',
     brokerName: '',
@@ -12,10 +12,15 @@ function Home() {
     phone: ''
   })
 
+  let navigate = useNavigate()
+  const showRealtor = (id) => {
+    navigate(`${id}`)
+  }
+
   useEffect(() => {
     const apiCall = async () => {
       let response = await axios.get('http://localhost:3001/realtors')
-      updateRealtor(response.data)
+      newRealtor(response.data)
     }
 
     apiCall()
@@ -36,19 +41,24 @@ function Home() {
       .catch((error) => {
         return error
       })
-    updateRealtor([...realtors, newRealtor.data])
+    newRealtor([...realtors, newRealtor.data])
     setFormState({ name: '', brokerName: '', email: '', phone: '' })
   }
 
   return (
     <div className="App">
-      <h1>All Realtors Here.</h1>
+      <h1>Select one of the following realtors</h1>
       {realtors.map((realtor) => (
-        <div key={realtor._id}>
-          <h2>{realtor.name}</h2>
+        <div
+          key={realtor._id}
+          onClick={() => {
+            showRealtor(realtor._id)
+          }}
+        >
+          <h4>{realtor.name}</h4>
         </div>
       ))}
-      <h3>Add Another Realtor:</h3>
+      <h2>Add Another Realtor:</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
         <input id="name" value={formState.name} onChange={handleChange} />
@@ -63,6 +73,15 @@ function Home() {
         <label htmlFor="phone">Phone:</label>
         <input id="phone" value={formState.phone} onChange={handleChange} />
         <button type="submit">Add Realtor</button>
+      </form>
+      <h2>Update Realtor:</h2>
+      <form>
+        <label></label>
+        <input></input>
+        <label></label>
+        <input></input>
+        <label></label>
+        <input></input>
       </form>
     </div>
   )

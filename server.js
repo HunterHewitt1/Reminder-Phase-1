@@ -40,7 +40,10 @@ app.put('/closings', async (req, res) => {
 })
 
 //Delete Realtors
-
+app.delete('/realtors/:id', async (req, res) => {
+  let deletedRealtor = await Realtor.findByIdAndDelete(req.params.id)
+  res.json(deletedRealtor)
+})
 //Realtor Routes
 // Create Realtor Route --> POST
 app.post('/realtors', async (req, res) => {
@@ -65,11 +68,10 @@ app.put('/realtors', async (req, res) => {
 })
 //Delete Realtors
 
-
 //Read all closings by realtors
 
-app.get("/realtor/:id", async (req, res) => {
-  const closingByRealtor = await Closing.find({realtor_id:req.params.id})
+app.get('/realtor/:id', async (req, res) => {
+  const closingByRealtor = await Closing.find({ realtor_id: req.params.id })
   res.json(closingByRealtor)
 })
 
