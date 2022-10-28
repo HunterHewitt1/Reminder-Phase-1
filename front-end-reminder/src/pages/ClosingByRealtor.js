@@ -1,10 +1,16 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useSyncExternalStore } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 
 import axios from 'axios'
 
 function ClosingByRealtor() {
   const [realtors, updateRealtor] = useState([])
+  const [form, setForm] = useState({
+    name: '',
+    brokerName: '',
+    email: '',
+    phone: ''
+  })
   let { id } = useParams()
 
   useEffect(() => {
@@ -14,7 +20,20 @@ function ClosingByRealtor() {
     }
 
     apiCall()
-  }, [])
+  }, [id])
+
+  const handleChange = async (event) => {
+    setForm({ ...form, [event.target.id]: event.target.value })
+  }
+  const handleUpdate = async (event) => {
+    event.preventDefault()
+    let updateNewRealtor = await axios.put(
+      `http://localhost:3001/realtors/${id}`,
+      form
+    )
+    updateRealtor([realtors, updateNewRealtor])
+    setForm({ name: '', brokerName: '', email: '', phone: '' })
+  }
 
   return (
     <div className="App">
@@ -32,6 +51,23 @@ function ClosingByRealtor() {
         </div>
       ))}
       <h3>Closings By Realtors</h3>
+      <br></br>
+      <h2>Update Realtor</h2>
+      <form onSubmit={handleUpdate}>
+        <label htmlFor="name">Name: </label>
+        <input id="name" value={form.name} onChange={handleChange}></input>
+        <label htmlFor="brokerName">Broker Name: </label>
+        <input
+          id="brokerName"
+          value={form.brokerName}
+          onChange={handleChange}
+        ></input>
+        <label htmlFor="email">Email: </label>
+        <input id="email" value={form.email} onChange={handleChange}></input>
+        <label htmlFor="phone">Phone: </label>
+        <input id="phone" value={form.phone} onChange={handleChange}></input>
+        <button type="submit">Update Realtor</button>
+      </form>
     </div>
   )
 }

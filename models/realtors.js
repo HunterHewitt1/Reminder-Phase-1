@@ -6,8 +6,7 @@ const realtorSchema = new Schema(
     brokerName: { type: String, required: true },
     address: { type: String, required: false },
     email: { type: String, required: true },
-    phone: { type: String, required: true },
-    realtorId: { type: Schema.Types.ObjectId, ref: 'realtor_id' }
+    phone: { type: String, required: true }
   },
   { timestamps: true }
 )

@@ -60,7 +60,7 @@ app.get('/realtors', async (req, res) => {
   res.json(allRealtors)
 })
 //Update Realtors
-app.put('/realtors', async (req, res) => {
+app.put('/realtors/:id', async (req, res) => {
   let updateRealtor = await Realtor.findByIdAndUpdate(req.params.id, req.body, {
     new: true
   })

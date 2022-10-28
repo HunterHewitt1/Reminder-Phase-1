@@ -74,15 +74,6 @@ function Home() {
         <input id="phone" value={formState.phone} onChange={handleChange} />
         <button type="submit">Add Realtor</button>
       </form>
-      <h2>Update Realtor:</h2>
-      <form>
-        <label></label>
-        <input></input>
-        <label></label>
-        <input></input>
-        <label></label>
-        <input></input>
-      </form>
     </div>
   )
 }
