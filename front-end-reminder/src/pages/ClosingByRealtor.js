@@ -1,5 +1,6 @@
 import { useState, useEffect, useSyncExternalStore } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import axios from 'axios'
 
@@ -47,6 +48,7 @@ function ClosingByRealtor() {
 
   return (
     <div className="App">
+      <Link to="/"> Home </Link>
       <h1>Closing Information.</h1>
       {realtors.map((realtor) => (
         <div key={realtor._id}>
@@ -77,7 +79,9 @@ function ClosingByRealtor() {
         <input id="email" value={form.email} onChange={handleChange}></input>
         <label htmlFor="phone">Phone: </label>
         <input id="phone" value={form.phone} onChange={handleChange}></input>
-        <button type="submit">Update Realtor</button>
+        <button type="submit" onClick="window.location.reload();">
+          Update Realtor
+        </button>
       </form>
       <button onClick={handleDelete}>Delete</button>
     </div>

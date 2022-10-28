@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import axios from 'axios'
 
@@ -44,9 +45,13 @@ function Home() {
     newRealtor([...realtors, newRealtor.data])
     setFormState({ name: '', brokerName: '', email: '', phone: '' })
   }
+  const refreshPage = () => {
+    window.location.reload()
+  }
 
   return (
     <div className="App">
+      <Link to="/realtors"> Home </Link>
       <h1>Select one of the following realtors</h1>
       {realtors.map((realtor) => (
         <div
@@ -72,7 +77,9 @@ function Home() {
         <input id="email" value={formState.email} onChange={handleChange} />
         <label htmlFor="phone">Phone:</label>
         <input id="phone" value={formState.phone} onChange={handleChange} />
-        <button type="submit">Add Realtor</button>
+        <button type="submit" onClick="refreshPage">
+          Add Realtor
+        </button>
       </form>
     </div>
   )
