@@ -35,6 +35,16 @@ function ClosingByRealtor() {
     setForm({ name: '', brokerName: '', email: '', phone: '' })
   }
 
+  const handleDelete = async (event) => {
+    event.preventDefault()
+    let deletedRealtor = await axios.delete(
+      `http://localhost:3001/realtors/${id}`,
+      form
+    )
+    updateRealtor([realtors, deletedRealtor.data])
+    setForm({ name: '', brokerName: '', email: '', phone: '' })
+  }
+
   return (
     <div className="App">
       <h1>Closing Information.</h1>
@@ -52,6 +62,7 @@ function ClosingByRealtor() {
       ))}
       <h3>Closings By Realtors</h3>
       <br></br>
+
       <h2>Update Realtor</h2>
       <form onSubmit={handleUpdate}>
         <label htmlFor="name">Name: </label>
@@ -68,6 +79,7 @@ function ClosingByRealtor() {
         <input id="phone" value={form.phone} onChange={handleChange}></input>
         <button type="submit">Update Realtor</button>
       </form>
+      <button onClick={handleDelete}>Delete</button>
     </div>
   )
 }
