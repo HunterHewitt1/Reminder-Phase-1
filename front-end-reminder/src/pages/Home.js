@@ -51,8 +51,10 @@ function Home() {
 
   return (
     <div className="App">
-      <Link to="/realtors"> Home </Link>
-      <h1>Select one of the following realtors</h1>
+      <button>
+        <Link to="/realtors"> Home </Link>
+      </button>
+      <h1>Select one of the following realtors: </h1>
       {realtors.map((realtor) => (
         <div
           key={realtor._id}

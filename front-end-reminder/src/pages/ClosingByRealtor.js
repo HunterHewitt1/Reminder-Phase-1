@@ -48,10 +48,12 @@ function ClosingByRealtor() {
 
   return (
     <div className="App">
-      <Link to="/"> Home </Link>
-      <h1>Closing Information.</h1>
+      <button>
+        <Link to="/"> Home </Link>
+      </button>
       {realtors.map((realtor) => (
         <div key={realtor._id}>
+          <h1>{`Closing Information for ${realtor.realtorName}`}</h1>
           <h2>{`Realtor Name: ${realtor.realtorName}`}</h2>
           <h2>{`Client Name: ${realtor.clientName}`}</h2>
           <h2>{`Email: ${realtor.email}`}</h2>
@@ -62,11 +64,10 @@ function ClosingByRealtor() {
           <h2>{`Option Period: ${realtor.optionPeriod}`}</h2>
         </div>
       ))}
-      <h3>Closings By Realtors</h3>
       <br></br>
 
       <h2>Update Realtor</h2>
-      <form onSubmit={handleUpdate}>
+      <form class="closingForm" onSubmit={handleUpdate}>
         <label htmlFor="name">Name: </label>
         <input id="name" value={form.name} onChange={handleChange}></input>
         <label htmlFor="brokerName">Broker Name: </label>
@@ -79,7 +80,11 @@ function ClosingByRealtor() {
         <input id="email" value={form.email} onChange={handleChange}></input>
         <label htmlFor="phone">Phone: </label>
         <input id="phone" value={form.phone} onChange={handleChange}></input>
-        <button type="submit" onClick="window.location.reload();">
+        <button
+          class="submit"
+          type="submit"
+          onClick="window.location.reload();"
+        >
           Update Realtor
         </button>
       </form>
