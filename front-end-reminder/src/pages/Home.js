@@ -54,7 +54,7 @@ function Home() {
       <button>
         <Link to="/realtors"> Home </Link>
       </button>
-      <h1>Select one of the following realtors: </h1>
+      <h1>Select one of the following realtors to view closings </h1>
       {realtors.map((realtor) => (
         <div
           key={realtor._id}
