@@ -56,6 +56,7 @@ function Home() {
       <h1>Select one of the following realtors to view closings </h1>
       {realtors.map((realtor) => (
         <div
+          class="borderHome"
           key={realtor._id}
           onClick={() => {
             showRealtor(realtor._id)
