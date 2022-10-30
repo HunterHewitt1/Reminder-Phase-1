@@ -32,7 +32,6 @@ function Home() {
   }
 
   const handleSubmit = async (event) => {
-    event.preventDefault()
     console.log(formState)
     let newRealtor = await axios
       .post('http://localhost:3001/realtors', formState)
