@@ -74,28 +74,34 @@ function Home() {
           value={formState.name}
           onChange={handleChange}
         />
-        <label htmlFor="brokerName">Broker Name:</label>
+        <label class="nameForm" htmlFor="brokerName">
+          Broker Name:
+        </label>
         <input
           class="border"
           id="brokerName"
           value={formState.brokerName}
           onChange={handleChange}
         />
-        <label htmlFor="email">Email:</label>
+        <label class="nameForm" htmlFor="email">
+          Email:
+        </label>
         <input
           class="border"
           id="email"
           value={formState.email}
           onChange={handleChange}
         />
-        <label htmlFor="phone">Phone:</label>
+        <label class="nameForm" htmlFor="phone">
+          Phone:
+        </label>
         <input
           class="border"
           id="phone"
           value={formState.phone}
           onChange={handleChange}
         />
-        <button type="submit" onClick="refreshPage">
+        <button class="addBtn" type="submit" onClick="refreshPage">
           Add Realtor
         </button>
       </form>
