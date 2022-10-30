@@ -42,11 +42,10 @@ function Home() {
       .catch((error) => {
         return error
       })
+
     newRealtor([...realtors, newRealtor.data])
     setFormState({ name: '', brokerName: '', email: '', phone: '' })
-  }
-  const refreshPage = () => {
-    window.location.reload()
+    document.location.reload()
   }
 
   return (

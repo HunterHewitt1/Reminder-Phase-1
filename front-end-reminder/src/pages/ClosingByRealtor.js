@@ -48,7 +48,7 @@ function ClosingByRealtor() {
 
   return (
     <div className="App">
-      <button>
+      <button id="btn">
         <Link to="/"> Home </Link>
       </button>
       {realtors.map((realtor) => (
@@ -80,11 +80,7 @@ function ClosingByRealtor() {
         <input id="email" value={form.email} onChange={handleChange}></input>
         <label htmlFor="phone">Phone: </label>
         <input id="phone" value={form.phone} onChange={handleChange}></input>
-        <button
-          class="submit"
-          type="submit"
-          onClick="window.location.reload();"
-        >
+        <button type="submit" onClick="window.location.reload();">
           Update Realtor
         </button>
       </form>
