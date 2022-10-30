@@ -27,3 +27,20 @@ body{
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+.border{
+  font-size: 15px;
+  width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid red;
+}
+.homeForm{
+  flex-direction: row;
+
+}
+.nameForm{
+  font-size: 20px;
+  margin: 10px;
+}

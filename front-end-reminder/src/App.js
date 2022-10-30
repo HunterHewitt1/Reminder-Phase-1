@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
-import Realtors from './pages/Realtors'
 import ClosingByRealtor from './pages/ClosingByRealtor'
 import './App.css'
 

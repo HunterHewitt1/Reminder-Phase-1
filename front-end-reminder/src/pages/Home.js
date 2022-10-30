@@ -55,7 +55,6 @@ function Home() {
       <h1>Select one of the following realtors to view closings </h1>
       {realtors.map((realtor) => (
         <div
-          class="borderHome"
           key={realtor._id}
           onClick={() => {
             showRealtor(realtor._id)
@@ -65,19 +64,37 @@ function Home() {
         </div>
       ))}
       <h2>Add Another Realtor:</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
-        <input id="name" value={formState.name} onChange={handleChange} />
+      <form class="homeForm" onSubmit={handleSubmit}>
+        <label class="nameForm" htmlFor="name">
+          Name:
+        </label>
+        <input
+          class="border"
+          id="name"
+          value={formState.name}
+          onChange={handleChange}
+        />
         <label htmlFor="brokerName">Broker Name:</label>
         <input
+          class="border"
           id="brokerName"
           value={formState.brokerName}
           onChange={handleChange}
         />
         <label htmlFor="email">Email:</label>
-        <input id="email" value={formState.email} onChange={handleChange} />
+        <input
+          class="border"
+          id="email"
+          value={formState.email}
+          onChange={handleChange}
+        />
         <label htmlFor="phone">Phone:</label>
-        <input id="phone" value={formState.phone} onChange={handleChange} />
+        <input
+          class="border"
+          id="phone"
+          value={formState.phone}
+          onChange={handleChange}
+        />
         <button type="submit" onClick="refreshPage">
           Add Realtor
         </button>
