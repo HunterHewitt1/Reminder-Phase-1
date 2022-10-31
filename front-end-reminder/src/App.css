@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Merriweather:wght@700&family=Oswald:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Bebas+Neue&family=Merriweather:wght@700&family=Oswald:wght@300&display=swap');
 body{
   font-family: 'Amiri Quran', serif;
   text-align: center;
@@ -93,10 +93,14 @@ display: inline;
   border: 2px solid white;
   width: 20%;
   margin-left: auto;
+  margin-top: auto;
+
   margin-right: auto;
   background-color: white;
   color: 
   #6e58b1;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 30px;
 
 }
 .closingForm{
