@@ -87,7 +87,9 @@ function ClosingByRealtor() {
           Update Realtor
         </button>
       </form>
-      <button onClick={handleDelete}>Delete</button>
+      <button class="deleteBtn" onClick={handleDelete}>
+        Delete Realtor
+      </button>
     </div>
   )
 }

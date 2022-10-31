@@ -66,6 +66,15 @@ body{
   border-radius: 6px;
   border: 2px solid white
 }
+.deleteBtn{
+  margin: 10px;
+  font-size: 15px;
+  padding: 8px 24px;
+  background-color: #3877b7;
+  color: white;
+  border-radius: 6px;
+  border: 2px solid white
+}
 .homeBtn{
   margin: 10px;
   font-size: 15px;
