@@ -40,13 +40,15 @@ body{
   border-radius: 6px;
 }
 .homeForm{
-  flex-direction: row;
-
+  display: grid;
+  justify-items: center;
 }
 .nameForm{
   font-size: 20px;
-  margin: 20px;
+  margin: 5px;
   font-weight: bold;
+
+
 }
 .addBtn{
   margin: 10px;
@@ -99,10 +101,11 @@ body{
 }
 .closingForm{
   font-size: 20px;
-  margin: 10px;
+  margin: 5px;
   font-weight: bold;
   display: grid;
   justify-items: center;
+  
   
   
 }
