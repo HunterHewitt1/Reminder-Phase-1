@@ -8,7 +8,7 @@ body{
 #borderInfo{
   border-width:5px;
   border-style:solid;
-  border-color:black;
+  border-color:white;
   display: inline-block;
   margin: 40px;
 }
@@ -105,9 +105,6 @@ body{
   font-weight: bold;
   display: grid;
   justify-items: center;
-  
-  
-  
 }
 .border2{
   font-size: 12px;
@@ -118,5 +115,8 @@ body{
   border: none;
   border-bottom: 2px solid purple;
   border-radius: 6px;
-
+}
+.text{
+  font-size: 20px;
+  margin: 10px;
 }

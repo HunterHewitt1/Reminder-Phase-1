@@ -53,15 +53,15 @@ function ClosingByRealtor() {
       </button>
       {realtors.map((realtor) => (
         <div id="borderInfo" key={realtor._id}>
-          <h1>{`Closing Information for ${realtor.realtorName}`}</h1>
-          <h2>{`Realtor Name: ${realtor.realtorName}`}</h2>
-          <h2>{`Client Name: ${realtor.clientName}`}</h2>
-          <h2>{`Email: ${realtor.email}`}</h2>
-          <h2>{`Property Address: ${realtor.propertyAddress}`}</h2>
-          <h2>{`MLS Number: ${realtor.MLS}`}</h2>
-          <h2>{`Close Date: ${realtor.closeDate}`}</h2>
-          <h2>{`Exucuted Contract Date: ${realtor.exucutedContractDate}`}</h2>
-          <h2>{`Option Period: ${realtor.optionPeriod}`}</h2>
+          <h1 class="text">{`Closing Information for ${realtor.realtorName}`}</h1>
+          <h2 class="text">{`Realtor Name: ${realtor.realtorName}`}</h2>
+          <h2 class="text">{`Client Name: ${realtor.clientName}`}</h2>
+          <h2 class="text">{`Email: ${realtor.email}`}</h2>
+          <h2 class="text">{`Property Address: ${realtor.propertyAddress}`}</h2>
+          <h2 class="text">{`MLS Number: ${realtor.MLS}`}</h2>
+          <h2 class="text">{`Close Date: ${realtor.closeDate}`}</h2>
+          <h2 class="text">{`Exucuted Contract Date: ${realtor.exucutedContractDate}`}</h2>
+          <h2 class="text">{`Option Period: ${realtor.optionPeriod}`}</h2>
         </div>
       ))}
       <br></br>

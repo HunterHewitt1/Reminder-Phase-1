@@ -34,4 +34,6 @@
 
 #### Lucidchart: [Lucid](https://lucid.app/lucidchart/d995a123-c2a6-4cbc-b634-34f381d9ef09/edit?beaconFlowId=D6636A5957384807&invitationId=inv_61ca9824-6950-4da4-a8a3-1aa02605e31f&page=0_0#)
 
+#### CSS-Tricks: [CSS] (https://css-tricks.com/snippets/css/complete-guide-grid/)
+
 ---
