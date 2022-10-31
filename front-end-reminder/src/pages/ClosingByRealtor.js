@@ -72,7 +72,7 @@ function ClosingByRealtor() {
           Name:{' '}
         </label>
         <input
-          class="border"
+          class="border2"
           id="name"
           value={form.name}
           onChange={handleChange}
@@ -81,7 +81,7 @@ function ClosingByRealtor() {
           Broker Name:{' '}
         </label>
         <input
-          class="border"
+          class="border2"
           id="brokerName"
           value={form.brokerName}
           onChange={handleChange}
@@ -90,7 +90,7 @@ function ClosingByRealtor() {
           Email:{' '}
         </label>
         <input
-          class="border"
+          class="border2"
           id="email"
           value={form.email}
           onChange={handleChange}
@@ -99,7 +99,7 @@ function ClosingByRealtor() {
           Phone:{' '}
         </label>
         <input
-          class="border"
+          class="border2"
           id="phone"
           value={form.phone}
           onChange={handleChange}

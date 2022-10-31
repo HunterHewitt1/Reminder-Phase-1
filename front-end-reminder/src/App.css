@@ -45,7 +45,7 @@ body{
 }
 .nameForm{
   font-size: 20px;
-  margin: 10px;
+  margin: 20px;
   font-weight: bold;
 }
 .addBtn{
@@ -101,4 +101,19 @@ body{
   font-size: 20px;
   margin: 10px;
   font-weight: bold;
+  display: grid;
+  justify-items: center;
+  
+  
+}
+.border2{
+  font-size: 12px;
+  width: 20%;
+  padding: 12px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid purple;
+  border-radius: 6px;
+
 }
