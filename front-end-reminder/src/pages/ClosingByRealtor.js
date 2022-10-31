@@ -79,7 +79,11 @@ function ClosingByRealtor() {
         <input id="email" value={form.email} onChange={handleChange}></input>
         <label htmlFor="phone">Phone: </label>
         <input id="phone" value={form.phone} onChange={handleChange}></input>
-        <button type="submit" onClick="window.location.reload();">
+        <button
+          class="updateBtn"
+          type="submit"
+          onClick="window.location.reload();"
+        >
           Update Realtor
         </button>
       </form>
