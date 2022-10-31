@@ -48,6 +48,9 @@ function ClosingByRealtor() {
 
   return (
     <div className="App">
+      <button id="btn">
+        <Link to="/"> Home </Link>
+      </button>
       {realtors.map((realtor) => (
         <div id="borderInfo" key={realtor._id}>
           <h1>{`Closing Information for ${realtor.realtorName}`}</h1>
@@ -62,23 +65,45 @@ function ClosingByRealtor() {
         </div>
       ))}
       <br></br>
-      <button id="btn">
-        <Link to="/"> Home </Link>
-      </button>
+
       <h2>Update Realtor: </h2>
-      <form onSubmit={handleUpdate}>
-        <label htmlFor="name">Name: </label>
-        <input id="name" value={form.name} onChange={handleChange}></input>
-        <label htmlFor="brokerName">Broker Name: </label>
+      <form class="closingForm" onSubmit={handleUpdate}>
+        <label class="closingForm" htmlFor="name">
+          Name:{' '}
+        </label>
         <input
+          class="border"
+          id="name"
+          value={form.name}
+          onChange={handleChange}
+        ></input>
+        <label class="closingForm" htmlFor="brokerName">
+          Broker Name:{' '}
+        </label>
+        <input
+          class="border"
           id="brokerName"
           value={form.brokerName}
           onChange={handleChange}
         ></input>
-        <label htmlFor="email">Email: </label>
-        <input id="email" value={form.email} onChange={handleChange}></input>
-        <label htmlFor="phone">Phone: </label>
-        <input id="phone" value={form.phone} onChange={handleChange}></input>
+        <label class="closingForm" htmlFor="email">
+          Email:{' '}
+        </label>
+        <input
+          class="border"
+          id="email"
+          value={form.email}
+          onChange={handleChange}
+        ></input>
+        <label class="closingForm" htmlFor="phone">
+          Phone:{' '}
+        </label>
+        <input
+          class="border"
+          id="phone"
+          value={form.phone}
+          onChange={handleChange}
+        ></input>
         <button
           class="updateBtn"
           type="submit"
