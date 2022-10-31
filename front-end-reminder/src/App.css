@@ -28,6 +28,7 @@ body{
   border-radius: 6px;
   border: 2px solid #6e58b1;
   text-decoration: none;
+
 }
 .border{
   font-size: 15px;
@@ -119,4 +120,7 @@ body{
 .text{
   font-size: 20px;
   margin: 10px;
+}
+.divCloseBtn{
+
 }

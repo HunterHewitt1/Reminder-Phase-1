@@ -48,9 +48,12 @@ function ClosingByRealtor() {
 
   return (
     <div className="App">
-      <button id="btn">
-        <Link to="/"> Home </Link>
-      </button>
+      <div class="divCloseBtn">
+        <button id="btn">
+          <Link to="/"> Home </Link>
+        </button>
+      </div>
+
       {realtors.map((realtor) => (
         <div id="borderInfo" key={realtor._id}>
           <h1 class="text">{`Closing Information for ${realtor.realtorName}`}</h1>
