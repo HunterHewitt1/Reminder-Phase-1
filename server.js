@@ -9,6 +9,7 @@ const app = express()
 //Middleware
 app.use(express.json())
 app.use(cors())
+app.use(express.static(`${__dirname}/front-end-reminder/build`))
 
 app.get('/', (req, res) => {
   res.send({ msg: 'This route is being hit' })
@@ -74,7 +75,9 @@ app.get('/realtor/:id', async (req, res) => {
   const closingByRealtor = await Closing.find({ realtor_id: req.params.id })
   res.json(closingByRealtor)
 })
-
+app.get('/*', (req, res) => {
+  res.sendFile(`${__dirname}/front-end-reminder/build/index.html`)
+})
 app.listen(PORT, () => {
   console.log(`Express server listening on port: ${PORT}`)
 })
