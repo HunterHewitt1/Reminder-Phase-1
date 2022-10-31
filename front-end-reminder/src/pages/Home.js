@@ -49,7 +49,7 @@ function Home() {
 
   return (
     <div className="App">
-      <button>
+      <button class="homeBtn">
         <Link to="/realtors"> Home </Link>
       </button>
       <h1>Select one of the following realtors to view closings </h1>
@@ -60,7 +60,7 @@ function Home() {
             showRealtor(realtor._id)
           }}
         >
-          <h4>{realtor.name}</h4>
+          <h3 class="namesHome">{realtor.name}</h3>
         </div>
       ))}
       <h2>Add Another Realtor:</h2>
